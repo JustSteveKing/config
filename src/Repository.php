@@ -119,8 +119,8 @@ class Repository implements ArrayAccess
     {
         $keys = is_array($key) ? $key : [$key => $value];
 
-        foreach ($keys as $key => $value) {
-            Dig::set($this->items, $key, $value);
+        foreach ($keys as $item => $value) {
+            Dig::set($this->items, $item, $value);
         }
     }
 
