@@ -81,18 +81,18 @@ class Dig
 
         $keys = explode('.', $key);
 
-        foreach ($keys as $index => $key) {
+        foreach ($keys as $index => $item) {
             if (count($keys) === 1) {
                 break;
             }
 
             unset($keys[$index]);
 
-            if (! isset($array[$key]) || ! is_array($array[$key])) {
-                $array[$key] = [];
+            if (! isset($array[$item]) || ! is_array($array[$item])) {
+                $array[$item] = [];
             }
 
-            $array = &$array[$key];
+            $array = &$array[$item];
         }
 
         $array[array_shift($keys)] = $value;
