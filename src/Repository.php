@@ -48,7 +48,7 @@ class Repository implements ArrayAccess
     {
         $keys = (array) $keys;
 
-        if (! $this->items || empty($keys)) {
+        if ( empty($this->items) || empty($keys)) {
             return false;
         }
 
