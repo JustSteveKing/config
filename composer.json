@@ -1,6 +1,6 @@
 {
     "name": "juststeveking/config",
-    "description": "A simple dot notation configration package",
+    "description": "A simple dot notation connfiguration package",
     "type": "library",
     "license": "MIT",
     "authors": [
