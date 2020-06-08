@@ -23,7 +23,7 @@
 
 **Please note, this package is a work in progress. While there will be no breaking changes a stable release is not yet available**
 
-A simple dot notation connfiguration package.
+A simple dot notation configuration package.
 
 
 ## Installing
