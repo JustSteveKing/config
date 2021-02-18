@@ -10,32 +10,27 @@ use JustSteveKing\Config\Support\Dig;
 class Repository implements ArrayAccess
 {
     /**
-     * 
-     * An array of config items
-     * 
-     * @var array
-     */
-    protected array $items = [];
-
-    /**
      * Repository Constructor
-     * 
-     * @param array $items 
+     *
+     * @param array $items
      */
-    private function __construct(array $items = [])
-    {
+    private function __construct(
+        protected array $items = []
+    ) {
         $this->items = $items;
     }
 
     /**
      * Build a new Config Repository
-     * 
+     *
      * @param array $items
      * @return self
      */
     public static function build(array $items): self
     {
-        return new self($items);
+        return new self(
+            items: $items,
+        );
     }
 
     /**
@@ -78,7 +73,7 @@ class Repository implements ArrayAccess
      * @param mixed $value
      * @return array|mixed
      */
-    public function get($key, $value = null)
+    public function get($key, $value = null): mixed
     {
         if (is_array($key)) {
             return $this->getMany($key);

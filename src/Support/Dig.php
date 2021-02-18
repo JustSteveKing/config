@@ -23,7 +23,7 @@ class Dig
      * @param mixed $key
      * @return bool
      */
-    public static function exists($array, $key): bool
+    public static function exists($array, mixed $key): bool
     {
         if ($array instanceof ArrayAccess) {
             return $array->offsetExists($key);
@@ -38,7 +38,7 @@ class Dig
      * @param mixed $default
      * @return mixed
      */
-    public static function get($array, $key, $default = null)
+    public static function get($array, mixed $key, mixed $default = null): mixed
     {
         if (! static::accessible($array)) {
             return static::value($default);
@@ -73,7 +73,7 @@ class Dig
      * @param mixed $value
      * @return mixed
      */
-    public static function set(&$array, $key, $value)
+    public static function set(&$array, mixed $key, mixed $value): mixed
     {
         if (is_null($key)) {
             return $array = $value;
@@ -104,7 +104,7 @@ class Dig
      * @param mixed $value
      * @return mixed
      */
-    public static function value($value)
+    public static function value(mixed $value): mixed
     {
         return $value instanceof Closure ? $value() : $value;
     }
